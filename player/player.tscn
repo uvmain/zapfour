@@ -1,11 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://u46nrb8y8lo4"]
+[gd_scene load_steps=8 format=3 uid="uid://u46nrb8y8lo4"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_hjgmy"]
 [ext_resource type="Texture2D" uid="uid://irgu2f1h38em" path="res://assets/textures/player/tear.png" id="2_34wi0"]
 [ext_resource type="Texture2D" uid="uid://dep77j8287tyr" path="res://assets/textures/player/reticle.png" id="3_2k0cd"]
+[ext_resource type="PackedScene" uid="uid://dtugr00rkf83x" path="res://weapons/blaster/blaster.tscn" id="4_q034u"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sfykj"]
 radius = 12.0
+
+[sub_resource type="Gradient" id="Gradient_qr1w4"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_oxwlx"]
+gradient = SubResource("Gradient_qr1w4")
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 motion_mode = 1
@@ -14,14 +20,18 @@ script = ExtResource("1_hjgmy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_sfykj")
 
+[node name="Reticle" type="Sprite2D" parent="." groups=["Reticle"]]
+texture = ExtResource("3_2k0cd")
+
+[node name="ReticleLine" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 10, 0)
+width = 2.0
+texture = SubResource("GradientTexture2D_oxwlx")
+
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 rotation = 1.5708
 texture = ExtResource("2_34wi0")
 
-[node name="Reticle" type="Sprite2D" parent="."]
-texture = ExtResource("3_2k0cd")
+[node name="Weapons" type="Node2D" parent="."]
 
-[node name="ReticleLine" type="Line2D" parent="."]
-points = PackedVector2Array(0, 0, 0, 0)
-width = 2.0
-default_color = Color(1, 1, 1, 0.760784)
+[node name="Blaster" parent="Weapons" instance=ExtResource("4_q034u")]

@@ -5,7 +5,12 @@ extends CharacterBody2D
 @onready var reticle = $Reticle
 @onready var reticle_line = $ReticleLine
 
-func _physics_process(delta):
+
+func _ready():
+	position = get_viewport_rect().size / 2
+
+
+func _physics_process(_delta):
 	look_at_mouse()
 	move_and_slide()
 	move_reticle()
@@ -21,9 +26,9 @@ func look_at_mouse():
 
 
 func move_reticle():
-	reticle.position = get_local_mouse_position()
+	reticle.position = get_local_mouse_position().clamp(Vector2(250, 0), Vector2(250, 0))
 	var viewport_rect = get_viewport_rect().size
 	reticle_line.set_points([
-		Vector2.ZERO,
+		Vector2(31,0),
 		Vector2.ZERO.direction_to($Reticle.position) * (viewport_rect.x + viewport_rect.y)
 	])
