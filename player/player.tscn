@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dtugr00rkf83x" path="res://weapons/blaster/blaster.tscn" id="4_q034u"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sfykj"]
-radius = 12.0
+radius = 33.0
+height = 66.0
 
 [sub_resource type="Gradient" id="Gradient_qr1w4"]
 

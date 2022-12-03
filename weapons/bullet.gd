@@ -1,4 +1,4 @@
-extends Node2D
+extends Area2D
 
 @export var speed: int = 300
 
@@ -15,3 +15,6 @@ func move_simple(delta):
 func set_direction(new_direction: Vector2):
 	direction = new_direction
 	rotation += new_direction.angle()
+
+func die():
+	queue_free()

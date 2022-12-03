@@ -7,7 +7,8 @@ extends CharacterBody2D
 
 
 func _ready():
-	position = get_viewport_rect().size / 2
+#	position = get_viewport_rect().size / 2
+	pass
 
 
 func _physics_process(_delta):
