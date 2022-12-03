@@ -20,3 +20,8 @@ texture = ExtResource("2_34wi0")
 
 [node name="Reticle" type="Sprite2D" parent="."]
 texture = ExtResource("3_2k0cd")
+
+[node name="ReticleLine" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 0, 0)
+width = 2.0
+default_color = Color(1, 1, 1, 0.760784)

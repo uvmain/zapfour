@@ -1,11 +1,9 @@
 extends CharacterBody2D
 
-
-@export_range(1, 1000, 1, "or_greater")
-var speed = 300.0
+@export_range(1, 1000, 1, "or_greater") var speed = 300.0
 
 @onready var reticle = $Reticle
-
+@onready var reticle_line = $ReticleLine
 
 func _physics_process(delta):
 	look_at_mouse()
@@ -24,3 +22,8 @@ func look_at_mouse():
 
 func move_reticle():
 	reticle.position = get_local_mouse_position()
+	var viewport_rect = get_viewport_rect().size
+	reticle_line.set_points([
+		Vector2.ZERO,
+		Vector2.ZERO.direction_to($Reticle.position) * (viewport_rect.x + viewport_rect.y)
+	])
