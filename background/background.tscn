@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb67qku2eyo43"]
+
+[ext_resource type="Texture2D" uid="uid://clwws1opxxxvf" path="res://assets/textures/diamond_small.png" id="1_p2nmm"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 0.8)
+
+[node name="Faketile" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+texture = ExtResource("1_p2nmm")
+region_enabled = true
+region_rect = Rect2(0, 0, 4000, 4000)
