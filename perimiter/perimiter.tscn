@@ -6,8 +6,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_xu2au"]
 radius = 1419.26
 
-[node name="Node2D" type="Node2D"]
+[node name="Perimiter" type="Node2D" groups=["Perimiter"]]
 script = ExtResource("1_t737w")
+radius = 1400
 
 [node name="PerimiterArea" type="Area2D" parent="."]
 monitorable = false

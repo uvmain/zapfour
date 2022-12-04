@@ -5,21 +5,32 @@ extends CharacterBody2D
 @onready var reticle = $Reticle
 @onready var reticle_line = $ReticleLine
 
+var perimiter
+var direction
+
 
 func _ready():
-#	position = get_viewport_rect().size / 2
+	perimiter = get_tree().get_first_node_in_group("Perimiter")
 	pass
 
 
 func _physics_process(_delta):
 	look_at_mouse()
-	move_and_slide()
+	movement()
 	move_reticle()
 
 
 func _input(_event):
-	var direction = Input.get_vector("player_left", "player_right", "player_up", "player_down").normalized()
-	velocity = direction * speed
+	direction = Input.get_vector("player_left", "player_right", "player_up", "player_down").normalized()
+
+
+func movement():
+	var vec_to_center = Vector2.ZERO - global_position
+	if vec_to_center.length() >= perimiter.radius:
+		velocity = vec_to_center.normalized() * perimiter.radius
+	else:
+		velocity = direction * speed
+	move_and_slide()
 
 
 func look_at_mouse():
