@@ -20,6 +20,6 @@ shape = SubResource("CircleShape2D_xu2au")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlayerCollider"]
 
-[node name="BorderPolygon" type="Polygon2D" parent="."]
+[node name="Border" type="Line2D" parent="."]
 
 [connection signal="area_exited" from="PerimiterArea" to="." method="_on_perimiter_area_area_exited"]
