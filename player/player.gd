@@ -15,25 +15,18 @@ func _ready():
 	pass
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	look_at_mouse()
-	movement(delta)
+	movement()
 	move_reticle()
-	delay += delta
-	if delay >= 1.0:
-		print(velocity)
-		delay = 0.0
 
 
 func _input(_event):
 	direction = Input.get_vector("player_left", "player_right", "player_up", "player_down").normalized()
 
 
-func movement(delta):
-	var vec_to_center = Vector2.ZERO - position
+func movement():
 	velocity = Vector2(direction * speed)
-	if (vec_to_center.length() + (velocity.length() * delta)) >= perimiter.radius:
-		velocity = velocity.limit_length(perimiter.radius - vec_to_center.length() - 1)
 	move_and_slide()
 
 

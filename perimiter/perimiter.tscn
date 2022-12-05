@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://ds2vq016pfb11"]
+[gd_scene load_steps=3 format=3 uid="uid://ds2vq016pfb11"]
 
 [ext_resource type="Script" path="res://perimiter/perimiter.gd" id="1_t737w"]
-[ext_resource type="Texture2D" uid="uid://dt3b4visipccf" path="res://assets/textures/border2.png" id="3_qghir"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xu2au"]
 radius = 1419.26
@@ -9,6 +8,7 @@ radius = 1419.26
 [node name="Perimiter" type="Node2D" groups=["Perimiter"]]
 script = ExtResource("1_t737w")
 radius = 1400
+quality = 128
 
 [node name="PerimiterArea" type="Area2D" parent="."]
 monitorable = false
@@ -16,7 +16,10 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PerimiterArea"]
 shape = SubResource("CircleShape2D_xu2au")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("3_qghir")
+[node name="PlayerCollider" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlayerCollider"]
+
+[node name="BorderPolygon" type="Polygon2D" parent="."]
 
 [connection signal="area_exited" from="PerimiterArea" to="." method="_on_perimiter_area_area_exited"]
