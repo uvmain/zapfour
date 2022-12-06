@@ -1,14 +1,26 @@
 @tool
 extends Node2D
 
-@export var radius: int = 1400
-@export var width: float = 2.0
+@export var radius: int = 1400: set=set_radius
+@export_range(1,50) var width: float = 10.0
 @export var center = Vector2.ZERO
-@export_range(5, 256) var number_of_segments: int =32
+@export_range(5, 256) var quality: int =64: set=set_quality
 
 
 func _ready():
 	set_perimeter()
+
+
+func set_quality(value):
+	quality = value
+	if (Engine.is_editor_hint()):
+		set_perimeter()
+	
+
+func set_radius(value):
+	radius = value
+	if (Engine.is_editor_hint()):
+		set_perimeter()
 
 
 func set_perimeter():

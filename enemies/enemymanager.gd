@@ -1,13 +1,21 @@
 extends Node2D
 
-@export var enemies: Array[PackedScene] = []
+var timer 
+var interval = 3.0
 
-
-# Called when the node enters the scene tree for the first time.
+# Start the timer with the specified interval
 func _ready():
-	pass # Replace with function body.
+	timer = $SpawnTimer
+	timer.wait_time = interval
+	timer.start()
 
+# Define the function to instantiate the enemy
+func spawn_enemy():
+	var enemy = preload("res://enemies/green.tscn").instantiate()
+	add_child(enemy)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Call the spawn_enemy function in the _process function when the timer expires
 func _process(_delta):
-	pass
+	if timer.time_left == 0.0:
+		timer.start()
+		spawn_enemy()
