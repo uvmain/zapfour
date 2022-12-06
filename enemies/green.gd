@@ -2,8 +2,8 @@ extends Node2D
 
 var player
 var direction : Vector2
-@export var speed = 200
-@export var accuracy = 50
+@export var speed = 150
+@export var speed_variation = 50
 
 func _ready():
 	player = get_tree().get_first_node_in_group("Player")
@@ -11,8 +11,7 @@ func _ready():
 
 func move_towards_player(delta):
 	direction = (player.position - position).normalized()
-	direction *= (speed * delta)
-	speed += randf_range(1 - accuracy, 1 + accuracy)
+	direction *= ((speed + randf_range(1 - speed_variation, 1 + speed_variation)) * delta)
 	position += direction
 
 
