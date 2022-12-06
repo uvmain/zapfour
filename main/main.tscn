@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://enemies/enemymanager.gd" id="2_e3ryg"]
 [ext_resource type="PackedScene" uid="uid://bb67qku2eyo43" path="res://background/background.tscn" id="3_7qflg"]
 [ext_resource type="PackedScene" uid="uid://c268sxgkg355n" path="res://enemies/green.tscn" id="3_j2vvi"]
-[ext_resource type="PackedScene" uid="uid://ds2vq016pfb11" path="res://perimiter/perimiter.tscn" id="3_yeyta"]
+[ext_resource type="PackedScene" uid="uid://ch2libn6m8ou0" path="res://perimeter/perimeter.tscn" id="5_13o4a"]
 
 [node name="Main" type="Node2D"]
 
@@ -22,6 +22,6 @@ enemies = [ExtResource("3_j2vvi")]
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
-[node name="Perimiter" parent="." instance=ExtResource("3_yeyta")]
-
 [node name="Background" parent="." instance=ExtResource("3_7qflg")]
+
+[node name="Perimeter" parent="." instance=ExtResource("5_13o4a")]
