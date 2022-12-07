@@ -1,7 +1,7 @@
 extends Node2D
 
 var timer 
-var interval = 3.0
+var interval = 1.0
 
 # Start the timer with the specified interval
 func _ready():
@@ -13,6 +13,7 @@ func _ready():
 func spawn_enemy():
 	var enemy = preload("res://enemies/green.tscn").instantiate()
 	add_child(enemy)
+	enemy.position = Globals.get_random_position_within_perimeter()
 
 # Call the spawn_enemy function in the _process function when the timer expires
 func _process(_delta):
