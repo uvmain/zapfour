@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxb2g388a68yr"]
+
+[ext_resource type="Script" path="res://enemies/purple.gd" id="1_p3d2m"]
+[ext_resource type="Texture2D" uid="uid://caa6hjjklbhdv" path="res://assets/textures/enemy_placeholder.png" id="2_t02v7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2e5mr"]
+radius = 34.0147
+
+[node name="Purple" type="Area2D" groups=["Enemies"]]
+script = ExtResource("1_p3d2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.611765, 0.00392157, 0.960784, 1)
+rotation = 1.5708
+texture = ExtResource("2_t02v7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2e5mr")

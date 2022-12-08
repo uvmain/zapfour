@@ -8,6 +8,7 @@ radius = 34.0147
 
 [node name="Green" type="Area2D" groups=["Enemies"]]
 script = ExtResource("1_pdcx1")
+health = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0, 1, 0.113725, 1)
