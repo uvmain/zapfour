@@ -2,20 +2,21 @@ extends Node2D
 
 var timer 
 var interval = 1.0
+var possible_enemies: Array
 
-# Start the timer with the specified interval
+
 func _ready():
+	possible_enemies = $Spawners.get_children()
 	timer = $SpawnTimer
 	timer.wait_time = interval
 	timer.start()
 
-# Define the function to instantiate the enemy
-func spawn_enemy():
-	var enemy = preload("res://enemies/green.tscn").instantiate()
-	add_child(enemy)
-	enemy.position = Globals.get_random_position_within_perimeter()
 
-# Call the spawn_enemy function in the _process function when the timer expires
+func spawn_enemy():
+	var spawner = possible_enemies[randi_range(0, possible_enemies.size() - 1)]
+	spawner.spawn()
+
+
 func _process(_delta):
 	if timer.time_left == 0.0:
 		timer.start()

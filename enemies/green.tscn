@@ -1,17 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://c268sxgkg355n"]
 
 [ext_resource type="Script" path="res://enemies/green.gd" id="1_pdcx1"]
-[ext_resource type="Texture2D" uid="uid://irgu2f1h38em" path="res://assets/textures/player/tear.png" id="2_8blvk"]
+[ext_resource type="Texture2D" uid="uid://caa6hjjklbhdv" path="res://assets/textures/enemy_placeholder.png" id="2_dkqmt"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jne8w"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_2e5mr"]
 radius = 34.0147
 
 [node name="Green" type="Area2D" groups=["Enemies"]]
 script = ExtResource("1_pdcx1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 1, 0.113725, 1)
 rotation = 1.5708
-texture = ExtResource("2_8blvk")
+texture = ExtResource("2_dkqmt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_jne8w")
+shape = SubResource("CircleShape2D_2e5mr")

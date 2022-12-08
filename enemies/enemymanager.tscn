@@ -1,9 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxechq5in7mys"]
+[gd_scene load_steps=4 format=3 uid="uid://cxechq5in7mys"]
 
 [ext_resource type="Script" path="res://enemies/enemymanager.gd" id="1_bb3wu"]
+[ext_resource type="PackedScene" uid="uid://c268sxgkg355n" path="res://enemies/green.tscn" id="2_ockr4"]
+[ext_resource type="Script" path="res://enemies/spawner_green.gd" id="3_3dxkp"]
 
 [node name="EnemyManager" type="Node2D"]
 script = ExtResource("1_bb3wu")
 
 [node name="SpawnTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Spawners" type="Node2D" parent="."]
+
+[node name="Green" type="Node2D" parent="Spawners"]
+script = ExtResource("3_3dxkp")
+enemy_scene = ExtResource("2_ockr4")
+
+[node name="EnemyHolder" type="Node2D" parent="." groups=["EnemyHolder"]]
