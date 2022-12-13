@@ -9,7 +9,7 @@ enum SpawnType {
 
 @export var enemy_scene: PackedScene
 @export var spawn_count: int = 10
-@export_enum(Points, Random, Circle, Offscreen) var spawn_type
+@export var spawn_type: SpawnType = SpawnType.Random
 
 
 @onready var enemy_holder: Node2D = get_tree().get_first_node_in_group("EnemyHolder")
@@ -20,7 +20,7 @@ func spawn():
 		var new_enemy = enemy_scene.instantiate()
 		enemy_holder.add_child(new_enemy)
 		new_enemy.position = get_spawn_positions()
-		print(spawn_type)
+
 
 func get_spawn_positions():
 	var new_position: Vector2

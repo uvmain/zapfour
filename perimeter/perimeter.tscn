@@ -1,12 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://ch2libn6m8ou0"]
+[gd_scene load_steps=4 format=3 uid="uid://ch2libn6m8ou0"]
 
 [ext_resource type="Script" path="res://perimeter/perimeter.gd" id="1_u2r85"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_to53y"]
+polygon = PackedVector2Array(-474, -1314, -214, -1382, 96, -1393, 345, -1344, 564, -1272, 768, -1178, 941, -1034, 1096, -861, 1243, -634, 1353, -355, 1406, -117, 1391, 189, 1338, 397, 1191, 748, 1036, 925, 681, 1220, 235, 1378, -274, 1386, -618, 1284, -905, 1099, -1124, 838, -1279, 570, -1381, 212, -1396, -90, -1324, -445, -1211, -736, -1075, -906, -856, -1144, -705, -1219, -535, -1299, -539, -1412, -1392, -1049, -1630, 287, -1452, 1076, -516, 1533, 919, 1427, 1557, 717, 1689, -321, 1485, -1053, 726, -1510, -195, -1578, -474, -1521, -520, -1427)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xu2au"]
 radius = 1400.0
 
 [node name="Perimeter" type="Node2D" groups=["Perimeter"]]
 script = ExtResource("1_u2r85")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_to53y")
 
 [node name="PerimiterArea" type="Area2D" parent="."]
 monitorable = false

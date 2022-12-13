@@ -28,4 +28,5 @@ func take_damage(amount:int) -> void:
 
 
 func die():
+	Events.create_explosion.emit(global_position)
 	queue_free()
