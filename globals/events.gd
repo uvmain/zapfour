@@ -1,3 +1,3 @@
 extends Node
 
-signal create_explosion(global_position)
+signal create_explosion(global_position, colour)

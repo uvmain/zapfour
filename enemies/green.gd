@@ -5,9 +5,11 @@ var direction : Vector2
 @export var speed = 150
 @export var speed_variation = 50
 @export var health: int = 2
+@export_color_no_alpha var enemy_colour
 
 func _ready():
 	player = get_tree().get_first_node_in_group("Player")
+	$Sprite2D.modulate = enemy_colour
 
 
 func move_towards_player(delta):
@@ -28,4 +30,5 @@ func take_damage(amount:int) -> void:
 
 
 func die():
+	Events.create_explosion.emit(global_position, enemy_colour)
 	queue_free()

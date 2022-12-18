@@ -8,6 +8,7 @@ radius = 34.0147
 
 [node name="Purple" type="Area2D" groups=["Enemies"]]
 script = ExtResource("1_p3d2m")
+enemy_colour = Color(0.627451, 0, 0.768627, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.611765, 0.00392157, 0.960784, 1)
