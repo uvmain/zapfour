@@ -12,13 +12,11 @@ enum SpawnType {
 @export var spawn_type: SpawnType = SpawnType.Random
 
 
-@onready var enemy_holder: Node2D = get_tree().get_first_node_in_group("EnemyHolder")
-
-
 func spawn():
 	for i in spawn_count:
 		var new_enemy = enemy_scene.instantiate()
-		enemy_holder.add_child(new_enemy)
+		Globals.create_kill_timer(new_enemy, 240)
+		Events.add_enemy.emit(new_enemy)
 		new_enemy.position = get_spawn_positions()
 
 

@@ -6,6 +6,7 @@ var possible_enemies: Array
 
 
 func _ready():
+	Events.add_enemy.connect(_on_add_enemy)
 	possible_enemies = $Spawners.get_children()
 	timer = $SpawnTimer
 	timer.wait_time = interval
@@ -21,3 +22,7 @@ func _process(_delta):
 	if timer.time_left == 0.0:
 		timer.start()
 		spawn_enemy()
+
+
+func _on_add_enemy(enemy_node):
+	$EnemyHolder.add_child(enemy_node)
