@@ -11,6 +11,4 @@ func _on_create_explosion(global_pos = Vector2.ZERO, colour = Color.WHITE):
 	new_explosion.global_position = global_pos
 	new_explosion.process_material.color = colour
 	new_explosion.emitting = true
-	
-	await get_tree().create_timer(new_explosion.lifetime).timeout
-	new_explosion.queue_free()
+	Globals.create_kill_timer(new_explosion, new_explosion.lifetime)

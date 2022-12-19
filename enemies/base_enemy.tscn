@@ -13,13 +13,12 @@ polygon = PackedVector2Array(1.4708e-15, -24.0208, 20.8026, -12.0104, 20.8026, 1
 script = ExtResource("1_ig30y")
 enemy_colour = Color(0.627451, 0, 0.768627, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.627451, 0, 0.768627, 1)
-rotation = 1.5708
-texture = ExtResource("2_6k8ic")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_2e5mr")
 
 [node name="ParticleCollider" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_y0ca7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_6k8ic")

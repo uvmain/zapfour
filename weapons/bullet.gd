@@ -5,6 +5,11 @@ extends Area2D
 var direction: Vector2
 var damage_amount: int = 1
 
+
+func _ready():
+	Globals.create_kill_timer(self, 20)
+
+
 func _physics_process(_delta):
 	move_simple(_delta)
 

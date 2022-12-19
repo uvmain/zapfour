@@ -2,7 +2,7 @@
 extends Node2D
 
 @export var radius: int = 1400: set=set_radius
-@export_range(1,250) var border_width: float = 10.0: set=set_border_width
+@export_range(1,250) var border_width: int = 10: set=set_border_width
 @export var center = Vector2.ZERO
 @export_range(5, 256) var number_of_segments: int =64: set=set_number_of_segments
 
@@ -36,9 +36,9 @@ func set_perimeter():
 	# update the bullet deadzone
 	$PerimiterArea/CollisionShape2D.shape.radius = radius
 	# update the line2d border
-	$Border.set_points(get_circle_points(radius + (border_width/2.0), number_of_segments * 2))
+	$Border.set_points(get_circle_points(radius + floori(border_width/2.0), floori(number_of_segments * 2.0)))
 	$Border.set_width(border_width)
-	# update the light occluder
+	# update the light occluder donut
 	var inner_circle = get_circle_points()
 	inner_circle.reverse()
 	inner_circle.append_array(get_circle_points(radius + 50))

@@ -17,7 +17,7 @@ enum MovementType {
 func _ready():
 	set_particle_collider()
 	player = get_tree().get_first_node_in_group("Player")
-	$Sprite2D.modulate = enemy_colour
+#	$Sprite2D.modulate = enemy_colour
 	
 	
 func simple_movement(delta):

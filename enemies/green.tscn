@@ -1,12 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5is06lk50phc"]
+[gd_scene load_steps=3 format=3 uid="uid://c5is06lk50phc"]
 
 [ext_resource type="PackedScene" uid="uid://ch1jdmb8t36er" path="res://enemies/base_enemy.tscn" id="1_lcigy"]
+[ext_resource type="Texture2D" uid="uid://by4jlt00p7koj" path="res://assets/textures/enemies/green.png" id="2_1vsdy"]
 
 [node name="Green" instance=ExtResource("1_lcigy")]
 speed = 211
 health = 1
-enemy_colour = Color(0.0196078, 0.85098, 0.160784, 1)
+enemy_colour = Color(0.4, 0.921569, 0.619608, 1)
 
-[node name="Sprite2D" parent="." index="0"]
-modulate = Color(0.0196078, 0.85098, 0.160784, 1)
+[node name="Sprite2D" parent="." index="2"]
 scale = Vector2(0.759, 0.759)
+texture = ExtResource("2_1vsdy")

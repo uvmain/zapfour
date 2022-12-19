@@ -1,5 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bws041j147gsc"]
+[gd_scene load_steps=3 format=3 uid="uid://bws041j147gsc"]
 
 [ext_resource type="PackedScene" uid="uid://ch1jdmb8t36er" path="res://enemies/base_enemy.tscn" id="1_asbn6"]
+[ext_resource type="Texture2D" uid="uid://bqhcaara8oaaq" path="res://assets/textures/enemies/purple.png" id="2_ingy7"]
 
 [node name="Purple" instance=ExtResource("1_asbn6")]
+enemy_colour = Color(0.635294, 0.211765, 0.882353, 1)
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("2_ingy7")
