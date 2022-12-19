@@ -16,6 +16,7 @@ one_shot = true
 [node name="Green" type="Node2D" parent="Spawners"]
 script = ExtResource("2_retea")
 enemy_scene = ExtResource("2_ockr4")
+spawn_type = 1
 
 [node name="Purple" type="Node2D" parent="Spawners"]
 script = ExtResource("2_retea")
