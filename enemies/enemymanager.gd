@@ -4,11 +4,14 @@ extends Node2D
 @export var spawn_interval = 10.0
 
 @onready var timer: Timer = $SpawnTimer
-@onready var possible_enemies: Array = $Spawners.get_children()
+@onready var possible_enemies: Array
 
 
 func _ready():
 	Events.add_enemy.connect(_on_add_enemy)
+	for i in $Spawners.get_children():
+		if i.spawn_enabled:
+			possible_enemies.append(i)
 	timer.wait_time = spawn_interval
 
 

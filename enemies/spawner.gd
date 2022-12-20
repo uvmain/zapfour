@@ -1,26 +1,35 @@
+@tool
 extends Node2D
 
 enum SpawnType {
 	Perimeter,
-	Random
+	Random,
+	CircleAroundPlayer,
+	Cross,
+	X
 }
 
 @export var enemy_scene: PackedScene
 @export var spawn_count: int = 10
 @export var spawn_type: SpawnType = SpawnType.Perimeter
+@export var spawn_radius: int = 500
+@export var spawn_enabled: bool = true
 
 
 func spawn():
-	for i in spawn_count:
+	for new_position in get_spawn_positions():
 		var new_enemy = enemy_scene.instantiate()
 		Globals.create_kill_timer(new_enemy, 240)
-		Events.add_enemy.emit(new_enemy)
-		new_enemy.position = get_spawn_positions()
+		if (Engine.is_editor_hint()):
+			add_child(new_enemy)
+		else:
+			Events.add_enemy.emit(new_enemy)
+		new_enemy.position = new_position
 
 
 func get_spawn_positions():
-	var new_position: Vector2
 	match spawn_type:
-		SpawnType.Perimeter: new_position = Globals.get_random_position_on_perimeter()
-		SpawnType.Random: new_position = Globals.get_random_position_within_perimeter()
-	return new_position
+		SpawnType.Perimeter: return SpawnShapes.get_random_positions_on_perimeter(spawn_count)
+		SpawnType.Random: return SpawnShapes.get_random_positions_within_perimeter(spawn_count)
+		SpawnType.CircleAroundPlayer: return SpawnShapes.get_circle_around_player(spawn_count, spawn_radius)
+		SpawnType.X: return SpawnShapes.get_x_positions(spawn_count, spawn_radius)

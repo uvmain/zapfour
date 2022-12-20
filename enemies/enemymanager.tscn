@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://l8ocjv8kjipk"]
+[gd_scene load_steps=6 format=3 uid="uid://l8ocjv8kjipk"]
 
 [ext_resource type="Script" path="res://enemies/enemymanager.gd" id="1_bb3wu"]
 [ext_resource type="PackedScene" uid="uid://c5is06lk50phc" path="res://enemies/green.tscn" id="2_ockr4"]
 [ext_resource type="Script" path="res://enemies/spawner.gd" id="2_retea"]
 [ext_resource type="PackedScene" uid="uid://bws041j147gsc" path="res://enemies/purple.tscn" id="4_h2t34"]
+[ext_resource type="PackedScene" uid="uid://c4h4s7t45utvu" path="res://enemies/pink.tscn" id="5_rg6qp"]
 
 [node name="EnemyManager" type="Node2D"]
 script = ExtResource("1_bb3wu")
@@ -19,9 +20,19 @@ one_shot = true
 script = ExtResource("2_retea")
 enemy_scene = ExtResource("2_ockr4")
 spawn_type = 1
+spawn_enabled = false
 
 [node name="Purple" type="Node2D" parent="Spawners"]
 script = ExtResource("2_retea")
 enemy_scene = ExtResource("4_h2t34")
+spawn_type = 2
+spawn_enabled = false
+
+[node name="Pink" type="Node2D" parent="Spawners"]
+script = ExtResource("2_retea")
+enemy_scene = ExtResource("5_rg6qp")
+spawn_count = 12
+spawn_type = 4
+spawn_radius = 600
 
 [node name="EnemyHolder" type="Node2D" parent="." groups=["EnemyHolder"]]
