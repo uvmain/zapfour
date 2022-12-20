@@ -19,7 +19,7 @@ func move_simple(delta):
 
 
 func set_direction(new_direction: Vector2):
-	direction = new_direction
+	direction = new_direction.normalized()
 	rotation += new_direction.angle()
 
 

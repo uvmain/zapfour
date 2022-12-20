@@ -18,7 +18,6 @@ gradient = SubResource("Gradient_qr1w4")
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_hjgmy")
-speed = 600.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_sfykj")

@@ -12,7 +12,6 @@ wait_time = 0.337
 one_shot = true
 autostart = true
 
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(23, 0)
+[node name="BulletMarkers" type="Node2D" parent="."]
 
 [connection signal="timeout" from="WeaponCooldown" to="." method="_on_weapon_cooldown_timeout"]
