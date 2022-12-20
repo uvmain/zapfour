@@ -4,7 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://ilnu0sogjhs8" path="res://assets/textures/enemies/orange.png" id="2_bkwn2"]
 
 [node name="Orange" instance=ExtResource("1_s7u0o")]
+speed = 300
 speed_variation = 0
+health = 1
 enemy_colour = Color(0.929412, 0.4, 0.172549, 1)
 
 [node name="Sprite2D" parent="." index="2"]

@@ -5,9 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://dep77j8287tyr" path="res://assets/textures/player/reticle.png" id="3_2k0cd"]
 [ext_resource type="PackedScene" uid="uid://dtugr00rkf83x" path="res://weapons/blaster/blaster.tscn" id="4_q034u"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sfykj"]
-radius = 33.0
-height = 66.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_hurdv"]
+radius = 33.0151
 
 [sub_resource type="Gradient" id="Gradient_qr1w4"]
 
@@ -20,7 +19,7 @@ wall_min_slide_angle = 0.0
 script = ExtResource("1_hjgmy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_sfykj")
+shape = SubResource("CircleShape2D_hurdv")
 
 [node name="Reticle" type="Sprite2D" parent="." groups=["Reticle"]]
 texture = ExtResource("3_2k0cd")

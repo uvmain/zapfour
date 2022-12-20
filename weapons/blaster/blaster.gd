@@ -7,10 +7,12 @@ extends Node2D
 @onready var bullet_markers = $BulletMarkers
 
 var bullet_directions: Array
+var player_radius
 
 
 func _ready():
 	set_bullet_directions()
+	player_radius = get_tree().get_first_node_in_group("Player").get_node_or_null("CollisionShape2D").shape.radius
 
 
 func shoot():
@@ -18,7 +20,7 @@ func shoot():
 		for bullet_marker in bullet_markers.get_children():
 			var new_bullet = bullet.instantiate()
 			Events.add_bullet.emit(new_bullet)
-			new_bullet.global_position = global_position
+			new_bullet.global_position = global_position + Vector2(bullet_marker.global_position - global_position).normalized() * (player_radius * 1.1)
 			new_bullet.set_direction(bullet_marker.global_position - new_bullet.global_position)
 		$WeaponCooldown.start()
 

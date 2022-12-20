@@ -22,39 +22,28 @@ one_shot = true
 script = ExtResource("2_retea")
 enemy_scene = ExtResource("2_ockr4")
 spawn_type = 1
-spawn_spread = null
-spawn_enabled = false
 
 [node name="Purple" type="Node2D" parent="Spawners"]
 script = ExtResource("2_retea")
 enemy_scene = ExtResource("4_h2t34")
 spawn_type = 2
-spawn_spread = null
-spawn_enabled = false
 
 [node name="Pink" type="Node2D" parent="Spawners"]
 script = ExtResource("2_retea")
 enemy_scene = ExtResource("5_rg6qp")
-spawn_count = 12
 spawn_type = 4
 spawn_radius = 600
-spawn_spread = null
-spawn_enabled = false
 
 [node name="Yellow" type="Node2D" parent="Spawners"]
 script = ExtResource("2_retea")
 enemy_scene = ExtResource("6_iehx3")
-spawn_count = 8
 spawn_type = 3
 spawn_radius = 600
-spawn_spread = null
-spawn_enabled = false
 
 [node name="Orange" type="Node2D" parent="Spawners"]
 script = ExtResource("2_retea")
 enemy_scene = ExtResource("7_d78mt")
-spawn_count = 5
 spawn_type = 5
-spawn_spread = null
+spawn_spread = 70
 
 [node name="EnemyHolder" type="Node2D" parent="." groups=["EnemyHolder"]]

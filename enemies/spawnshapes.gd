@@ -95,14 +95,13 @@ func get_plus_positions(number_of_points := 9, cross_length := 500):
 	return points
 
 
-func get_arc_around_player(number_of_points := 9, distance_from_player := 500, arc_degrees := 70):
+func get_arc_around_player(number_of_points := 9, distance_from_player := 500, arc_degrees := 90):
 	setup()
-	var starting_angle = randf_range(0.0, 2.0 * PI)
-	var spread = deg_to_rad(arc_degrees) / float(number_of_points)
-	print(starting_angle)
+	var starting_angle = randf_range(0.0, TAU)
+	var spread = 0
 	for i in range(number_of_points):
-		var x = distance_from_player * cos(starting_angle + deg_to_rad(spread))
-		var y = distance_from_player * sin(starting_angle + deg_to_rad(spread))
-		spread += spread
-		points.append(Vector2(x, y))
+		var x = distance_from_player * cos(starting_angle + spread)
+		var y = distance_from_player * sin(starting_angle + spread)
+		spread += (deg_to_rad(arc_degrees) / float(number_of_points))
+		points.append(Vector2(x, y) + player_position)
 	return points
