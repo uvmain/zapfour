@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://domdaqyj0327f"]
+
+[ext_resource type="PackedScene" uid="uid://ch1jdmb8t36er" path="res://enemies/base_enemy.tscn" id="1_ux0fa"]
+[ext_resource type="Texture2D" uid="uid://bel0otqe8drvt" path="res://assets/textures/enemies/yellow.png" id="2_8xrbk"]
+
+[node name="Yellow" instance=ExtResource("1_ux0fa")]
+health = 1
+enemy_colour = Color(1, 0.968627, 0.552941, 1)
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("2_8xrbk")
