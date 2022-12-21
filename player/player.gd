@@ -41,3 +41,7 @@ func move_reticle():
 		Vector2(31,0),
 		Vector2.ZERO.direction_to($Reticle.position) * (viewport_rect.x + viewport_rect.y)
 	])
+
+
+func pickup(node_to_pickup):
+	node_to_pickup.queue_free()
