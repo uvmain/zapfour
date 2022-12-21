@@ -46,11 +46,17 @@ func die():
 
 
 func set_particle_collider() -> void:
+	var points: PackedVector2Array = []
 	if ($CollisionShape2D.get_shape().has_method("get_radius")):
-		var circle_points: PackedVector2Array = []
 		var number_of_segments = floori($CollisionShape2D.get_shape().get_radius()/4.0)
 		for segment in range(number_of_segments + 1):
 			var angle_point = deg_to_rad(segment * 360.0 / number_of_segments - 90)
-			circle_points.push_back(Vector2(cos(angle_point), sin(angle_point)) * ($CollisionShape2D.get_shape().get_radius()))
-		$ParticleCollider.occluder.polygon  = circle_points
+			points.append(Vector2(cos(angle_point), sin(angle_point)) * ($CollisionShape2D.get_shape().get_radius()))
+	elif  ($CollisionShape2D.get_shape().has_method("get_size")):
+		var collision_size = $CollisionShape2D.get_shape().get_size()
+		points.append(Vector2((collision_size.x/2.0) * -1, (collision_size.y/2.0) * -1)) # -48, -18
+		points.append(Vector2((collision_size.x/2.0), (collision_size.y/2.0) * -1)) # +48, -18
+		points.append(Vector2((collision_size.x/2.0), collision_size.y/2.0)) # +48, +18
+		points.append(Vector2((collision_size.x/2.0) * -1, collision_size.y/2.0)) # -48, +18
+	$ParticleCollider.occluder.polygon  = points
 
