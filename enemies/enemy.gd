@@ -42,6 +42,7 @@ func take_damage(amount:int) -> void:
 
 func die():
 	Events.create_explosion.emit(global_position, enemy_colour)
+	Events.add_pickup.emit('COIN', global_position, 1)
 	queue_free()
 
 

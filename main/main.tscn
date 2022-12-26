@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://5gdkhpxi3nb1"]
+[gd_scene load_steps=8 format=3 uid="uid://5gdkhpxi3nb1"]
 
 [ext_resource type="PackedScene" uid="uid://l8ocjv8kjipk" path="res://enemies/enemymanager.tscn" id="2_auoog"]
 [ext_resource type="PackedScene" uid="uid://u46nrb8y8lo4" path="res://player/player.tscn" id="2_bt6vk"]
@@ -6,19 +6,17 @@
 [ext_resource type="PackedScene" uid="uid://bb67qku2eyo43" path="res://background/background.tscn" id="3_7qflg"]
 [ext_resource type="PackedScene" uid="uid://e7yo8yu72yrh" path="res://bulletmanager/bullet_manager.tscn" id="4_s12i6"]
 [ext_resource type="PackedScene" uid="uid://5gr28vx2gsok" path="res://pickups/pickup_manager.tscn" id="4_vafrh"]
-[ext_resource type="Script" path="res://pickups/pickup_manager.gd" id="5_3yn57"]
 [ext_resource type="PackedScene" uid="uid://ch2libn6m8ou0" path="res://perimeter/perimeter.tscn" id="5_13o4a"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Background" parent="." instance=ExtResource("3_7qflg")]
 
+[node name="PickupManager" parent="." instance=ExtResource("4_vafrh")]
+
 [node name="EnemyManager" parent="." instance=ExtResource("2_auoog")]
 
 [node name="ExplosionManager" parent="." instance=ExtResource("3_0rglp")]
-
-[node name="PickupManager" parent="." instance=ExtResource("4_vafrh")]
-script = ExtResource("5_3yn57")
 
 [node name="Player" parent="." instance=ExtResource("2_bt6vk")]
 

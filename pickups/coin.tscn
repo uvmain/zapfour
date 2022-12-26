@@ -41,12 +41,13 @@ radius = 16.0
 
 [node name="Coin" type="Area2D" groups=["Coins", "Pickups"]]
 script = ExtResource("1_2302u")
-regenerate = true
+pickup_value = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-rotation = 2.40756
+rotation = 0.54644
 frames = SubResource("SpriteFrames_d4h67")
 playing = true
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_vt7u7")

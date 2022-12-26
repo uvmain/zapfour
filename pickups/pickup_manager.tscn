@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://5gr28vx2gsok"]
+[gd_scene load_steps=3 format=3 uid="uid://5gr28vx2gsok"]
+
+[ext_resource type="Script" path="res://pickups/pickup_manager.gd" id="1_aa0xr"]
+[ext_resource type="PackedScene" uid="uid://t8uon7073eyn" path="res://pickups/coin.tscn" id="2_v8e1s"]
 
 [node name="PickupManager" type="Node2D"]
+script = ExtResource("1_aa0xr")
+coin = ExtResource("2_v8e1s")

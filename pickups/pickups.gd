@@ -1,15 +1,9 @@
-@tool
 extends Area2D
 
-@export var regenerate: bool = false: set=set_regenerate
+@export var pickup_value: int = 1
 
 
 func _ready():
-	setup()
-
-
-func set_regenerate(value):
-	regenerate = value
 	setup()
 
 
