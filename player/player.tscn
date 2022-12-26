@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://u46nrb8y8lo4"]
+[gd_scene load_steps=9 format=3 uid="uid://u46nrb8y8lo4"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_hjgmy"]
 [ext_resource type="Texture2D" uid="uid://irgu2f1h38em" path="res://assets/textures/player/tear.png" id="2_34wi0"]
@@ -6,12 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://dtugr00rkf83x" path="res://weapons/blaster/blaster.tscn" id="4_q034u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hurdv"]
-radius = 33.0151
+radius = 32.0
 
 [sub_resource type="Gradient" id="Gradient_qr1w4"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_oxwlx"]
 gradient = SubResource("Gradient_qr1w4")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1hqbj"]
+radius = 170.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
 motion_mode = 1
@@ -36,3 +39,10 @@ texture = ExtResource("2_34wi0")
 [node name="Weapons" type="Node2D" parent="."]
 
 [node name="Blaster" parent="Weapons" instance=ExtResource("4_q034u")]
+
+[node name="PickupArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea2D"]
+shape = SubResource("CircleShape2D_1hqbj")
+
+[connection signal="area_entered" from="PickupArea2D" to="." method="_on_pickup_area_2d_area_entered"]

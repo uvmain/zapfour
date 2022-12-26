@@ -2,27 +2,27 @@
 
 [ext_resource type="Texture2D" uid="uid://xfwfk02a0hf3" path="res://assets/textures/explosion_particle.png" id="1_qtj0l"]
 
-[sub_resource type="Gradient" id="Gradient_s0x2g"]
+[sub_resource type="Gradient" id="Gradient_38u4y"]
 offsets = PackedFloat32Array(0, 0.587045, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.870588, 1, 1, 1, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_a58tk"]
-gradient = SubResource("Gradient_s0x2g")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lkawd"]
+gradient = SubResource("Gradient_38u4y")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yeb1f"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2vsak"]
 resource_local_to_scene = true
 particle_flag_align_y = true
 particle_flag_disable_z = true
 direction = Vector3(0, 0, 0)
 spread = 180.0
 gravity = Vector3(0, 0, 0)
-initial_velocity_min = 551.62
-initial_velocity_max = 952.38
+initial_velocity_min = 843.14
+initial_velocity_max = 1000.0
 orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
 scale_min = 0.47
 color = Color(1, 0.301961, 0.882353, 1)
-color_ramp = SubResource("GradientTexture1D_a58tk")
+color_ramp = SubResource("GradientTexture1D_lkawd")
 hue_variation_min = -0.05
 hue_variation_max = 0.05
 turbulence_noise_speed_random = 2.11
@@ -35,11 +35,10 @@ collision_bounce = 1.0
 
 [node name="GPUParticles2D" type="GPUParticles2D"]
 emitting = false
-amount = 14
-lifetime = 0.38
+amount = 12
+process_material = SubResource("ParticleProcessMaterial_2vsak")
+texture = ExtResource("1_qtj0l")
+lifetime = 0.33
 one_shot = true
 explosiveness = 1.0
-randomness = 0.52
 local_coords = true
-process_material = SubResource("ParticleProcessMaterial_yeb1f")
-texture = ExtResource("1_qtj0l")

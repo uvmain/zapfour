@@ -45,3 +45,8 @@ func move_reticle():
 
 func pickup(node_to_pickup):
 	node_to_pickup.queue_free()
+
+
+func _on_pickup_area_2d_area_entered(area: Area2D):
+	if area.is_in_group("Pickups"):
+		area.player_is_collecting(self)

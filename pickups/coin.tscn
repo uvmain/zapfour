@@ -37,11 +37,12 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vt7u7"]
-radius = 16.0
+radius = 15.0
 
 [node name="Coin" type="Area2D" groups=["Coins", "Pickups"]]
 script = ExtResource("1_2302u")
 pickup_value = null
+speed = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 0.54644
