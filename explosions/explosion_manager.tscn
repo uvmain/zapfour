@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://63x083bkpkqg"]
-
-[ext_resource type="Script" path="res://explosions/explosion_manager.gd" id="1_xu2ag"]
-
-[node name="ExplosionManager" type="Node2D"]
-script = ExtResource("1_xu2ag")

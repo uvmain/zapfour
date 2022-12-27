@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://t8uon7073eyn"]
+[gd_scene load_steps=13 format=3 uid="uid://t8uon7073eyn"]
 
 [ext_resource type="Script" path="res://pickups/pickups.gd" id="1_2302u"]
 [ext_resource type="Texture2D" uid="uid://5xstu0s26rwo" path="res://assets/textures/pickups/coinsheet1.png" id="1_i41u3"]
+[ext_resource type="Material" uid="uid://5bfrhk2m5rru" path="res://effects/particle_trail.tres" id="3_6nn7e"]
+[ext_resource type="Texture2D" uid="uid://b37n8rqu1e81r" path="res://assets/textures/pickups/particletrail.png" id="4_4415y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yt47n"]
 atlas = ExtResource("1_i41u3")
@@ -41,8 +43,14 @@ radius = 15.0
 
 [node name="Coin" type="Area2D" groups=["Coins", "Pickups"]]
 script = ExtResource("1_2302u")
-pickup_value = null
-speed = null
+
+[node name="TrailParticles" type="GPUParticles2D" parent="."]
+modulate = Color(0, 0.866667, 0.866667, 1)
+emitting = false
+amount = 200
+process_material = ExtResource("3_6nn7e")
+texture = ExtResource("4_4415y")
+lifetime = 0.4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 0.54644

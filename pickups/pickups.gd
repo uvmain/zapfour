@@ -32,6 +32,7 @@ func _on_body_entered(body):
 func player_is_collecting(player_node):
 	if player != player_node:
 		player = player_node
+		$TrailParticles.emitting = true
 
 
 func move_to_player(delta):

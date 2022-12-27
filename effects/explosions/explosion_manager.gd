@@ -1,6 +1,6 @@
 extends Node2D
 
-const explosion = preload("res://explosions/gpu_particles_2d.tscn")
+@export var explosion: PackedScene
 
 func _ready():
 	Events.create_explosion.connect(_on_create_explosion)
