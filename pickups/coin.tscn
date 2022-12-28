@@ -5,41 +5,41 @@
 [ext_resource type="Material" uid="uid://5bfrhk2m5rru" path="res://effects/particle_trail.tres" id="3_6nn7e"]
 [ext_resource type="Texture2D" uid="uid://b37n8rqu1e81r" path="res://assets/textures/pickups/particletrail.png" id="4_4415y"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yt47n"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bg7i7"]
 atlas = ExtResource("1_i41u3")
-region = Rect2(0, 0, 32, 32)
+region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s0pcf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_lub4r"]
 atlas = ExtResource("1_i41u3")
-region = Rect2(32, 0, 32, 32)
+region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nvk7a"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tfa2"]
 atlas = ExtResource("1_i41u3")
-region = Rect2(64, 0, 32, 32)
+region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rlcjv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cw8k3"]
 atlas = ExtResource("1_i41u3")
-region = Rect2(96, 0, 32, 32)
+region = Rect2(48, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pfco7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_u26d7"]
 atlas = ExtResource("1_i41u3")
-region = Rect2(128, 0, 32, 32)
+region = Rect2(64, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vuryq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7wfj"]
 atlas = ExtResource("1_i41u3")
-region = Rect2(160, 0, 32, 32)
+region = Rect2(80, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d4h67"]
 resource_local_to_scene = true
 animations = [{
-"frames": [SubResource("AtlasTexture_yt47n"), SubResource("AtlasTexture_s0pcf"), SubResource("AtlasTexture_nvk7a"), SubResource("AtlasTexture_rlcjv"), SubResource("AtlasTexture_pfco7"), SubResource("AtlasTexture_vuryq")],
+"frames": [SubResource("AtlasTexture_bg7i7"), SubResource("AtlasTexture_lub4r"), SubResource("AtlasTexture_1tfa2"), SubResource("AtlasTexture_cw8k3"), SubResource("AtlasTexture_u26d7"), SubResource("AtlasTexture_l7wfj")],
 "loop": true,
 "name": &"default",
 "speed": 10.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vt7u7"]
-radius = 15.0
+radius = 8.0
 
 [node name="Coin" type="Area2D" groups=["Coins", "Pickups"]]
 script = ExtResource("1_2302u")

@@ -41,14 +41,16 @@ func set_perimeter():
 	# update the light occluder donut
 	var inner_circle = get_circle_points()
 	inner_circle.reverse()
-	inner_circle.append_array(get_circle_points(radius + 50))
+	inner_circle.append_array(get_circle_points(radius + 800))
 	$ParticleCollider.occluder.polygon = inner_circle
+	$ExitShader.polygon = inner_circle
 	
 
 
 func _on_perimiter_area_area_exited(area):
 	if area.is_in_group("Bullets"):
-		area.die()
+#		area.die()
+		Globals.create_kill_timer(area, 2.0)
 
 
 func get_circle_points(new_radius = radius, new_quality = number_of_segments):

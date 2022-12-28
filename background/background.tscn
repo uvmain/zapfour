@@ -1,10 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://bb67qku2eyo43"]
+[gd_scene load_steps=6 format=3 uid="uid://bb67qku2eyo43"]
 
+[ext_resource type="Shader" path="res://background/background.gdshader" id="1_g1gfs"]
 [ext_resource type="Texture2D" uid="uid://clwws1opxxxvf" path="res://assets/textures/diamond_small.png" id="1_p2nmm"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_i0vdb"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dgs6o"]
+noise = SubResource("FastNoiseLite_i0vdb")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l2dyb"]
+shader = ExtResource("1_g1gfs")
+shader_parameter/speed = 10.0
+shader_parameter/noise_strength = 0.843
+shader_parameter/shift = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_dgs6o")
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground"]
+material = SubResource("ShaderMaterial_l2dyb")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.8, 0.8)

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ilnu0sogjhs8" path="res://assets/textures/enemies/orange.png" id="2_bkwn2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5a1aq"]
-size = Vector2(95, 36)
+size = Vector2(74, 28)
 
 [node name="Orange" instance=ExtResource("1_s7u0o")]
 speed = 300
@@ -13,7 +13,6 @@ health = 1
 enemy_colour = Color(0.929412, 0.4, 0.172549, 1)
 
 [node name="CollisionShape2D" parent="." index="0"]
-position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_5a1aq")
 
 [node name="Sprite2D" parent="." index="2"]

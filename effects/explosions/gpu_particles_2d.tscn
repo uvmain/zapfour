@@ -35,7 +35,7 @@ collision_bounce = 1.0
 
 [node name="GPUParticles2D" type="GPUParticles2D"]
 emitting = false
-amount = 12
+amount = 19
 process_material = SubResource("ParticleProcessMaterial_2vsak")
 texture = ExtResource("1_qtj0l")
 lifetime = 0.33

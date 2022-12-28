@@ -60,3 +60,4 @@ player_right={
 [rendering]
 
 environment/defaults/default_clear_color=Color(0.603922, 0.603922, 0.603922, 1)
+anti_aliasing/quality/use_taa=true
