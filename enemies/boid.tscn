@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs2y26108ewel"]
+
+[ext_resource type="PackedScene" uid="uid://ch1jdmb8t36er" path="res://enemies/base_enemy.tscn" id="1_tca1t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8bboy"]
+radius = 54.0093
+
+[node name="Boid" instance=ExtResource("1_tca1t")]
+speed = 200
+health = 1
+enemy_colour = Color(0.501961, 0.94902, 0.823529, 1)
+movement_type = 1
+lookat_weight = 0.078
+
+[node name="Sprite2D" parent="." index="2"]
+visible = false
+
+[node name="Polygon2D" type="Polygon2D" parent="." index="3"]
+polygon = PackedVector2Array(-20, -18, 25, 0, -20, 18)
+
+[node name="BoidArea2D" type="Area2D" parent="." index="4" groups=["Boids"]]
+
+[node name="BoidCollider" type="CollisionShape2D" parent="BoidArea2D" index="0"]
+position = Vector2(15, 0)
+shape = SubResource("CircleShape2D_8bboy")
+
+[connection signal="area_entered" from="BoidArea2D" to="." method="_on_boid_area_2d_area_entered"]
+[connection signal="area_exited" from="BoidArea2D" to="." method="_on_boid_area_2d_area_exited"]
